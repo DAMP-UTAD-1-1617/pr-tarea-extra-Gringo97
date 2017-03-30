@@ -7,7 +7,16 @@ public class Ejercicio3 {
 	 */
 	public boolean todoPares(int[] vector) {
 		boolean res = false;
+		for (int i = 0; i < vector.length; i++) {
+			if(vector[i]%2==0){
+				res = true;
+			}else{
+				res = false;
+			}
+		}
+		
 		return res;
+		
 	}
 
 	public static void main(String[] args) {

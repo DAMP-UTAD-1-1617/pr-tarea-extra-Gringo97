@@ -1,3 +1,5 @@
+package EJERCICIO1;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -13,22 +15,28 @@ public class Ejercicio1 {
 			valores[i] = sc.nextInt();
 		}
 	}
-
+	
 	public String toString() {
 		return Arrays.toString(valores);
 	}
 
-	/**
-	 * Debes cambiar las posiciones pares por las posiciones impares del
-	 * atributo "valores" que es de tipo array Ejemplo: 1 2 3 4 5 -> 2 1 4 3 5
-	 */
-	public void intercambiar() {
+	public void intercambiar(int cantidad) {
+		int value = 0;
+		for(int i = 0; i < cantidad;i++){
+			if(valores[i]%2!=0 && (i+1)<cantidad && value != valores[i]){
+				value = valores[i];
+				valores[i]=valores[i+1];
+				valores[i+1]=value;
+			}
+		}
 	}
+
+	
 
 	public static void main(String[] args) {
 		Ejercicio1 ejemplo = new Ejercicio1();
 		ejemplo.introducirValores(5);
-		ejemplo.intercambiar();
+		ejemplo.intercambiar(5);
 		System.out.println(ejemplo);
 	}
 }
